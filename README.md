@@ -1,3 +1,4 @@
+
 # Crypto Receipt Viewer (Read‑Only PWA)
 
 A **read‑only**, mobile‑first web app that visualizes **Starknet** transactions as human‑friendly receipts.Paste any Starkscan/Voyager **transaction hash or URL**, add simple metadata (payee, token, amount), then generate:
