@@ -1,32 +1,31 @@
-# Crypto Receipt Viewer (Read-Only PWA)
+# Crypto Receipt Viewer (Read‑Only PWA)
 
-**Crypto Receipt Viewer** is a lightweight, mobile-first Progressive Web App that converts any Starknet transaction hash or explorer URL into a human-friendly, shareable receipt (QR + PNG). The app is **read-only** — no wallets, no keys, no transactions.
+A **read‑only**, mobile‑first web app that visualizes **Starknet** transactions as human‑friendly receipts.Paste any Starkscan/Voyager **transaction hash or URL**, add simple metadata (payee, token, amount), then generate:
 
-## Why
-Blockchain transactions are cryptic (long hashes). This app makes payment proof easy to show, share, and verify using the official explorers (Voyager, Starkscan).
+- **Explorer links** (Voyager + Starkscan)
+- **QR code** with embedded receipt payload
+- **PNG export** of the receipt card
+
+No wallets. No keys. **No on‑chain writes.** Optional USD estimate toggle (CoinGecko), **off by default**.
+
+---
 
 ## Features
-- Paste a Starknet transaction hash or full Voyager / Starkscan URL
-- Add optional fields: payee, token, amount, note
-- Generate a QR code that encodes the receipt JSON
-- Open transaction on Voyager and Starkscan directly
-- Export the receipt as a PNG image
-- Optional: toggle a read-only USD price estimate (CoinGecko)
 
-## Security
-- **No signing**, **no wallets**, **no private keys**.
-- App is read-only and runs entirely client-side.
+- Read‑only viewer (safe by design)
+- Transaction **hash/URL parsing** → explorer links
+- **QR code** generation for sharing
+- **PNG export** of the receipt card
+- Optional **USD estimate** (public API; opt‑in)
 
-## Tech
+## Safety
+
+- No wallet connections, no private data
+- No transactions or contract calls
+- All logic runs client‑side in the browser
+
+## Tech Stack
+
 - React (Create React App)
-- `qrcode` for QR generation
-- `html-to-image` for PNG export
-- PWA-friendly (manifest + service worker ready)
-
-## Quick Start (local)
-1. Install Node LTS (if needed): https://nodejs.org  
-2. Create app (if starting from scratch):
-   ```bash
-   npx create-react-app crypto-receipt-viewer --template cra-template
-   cd crypto-receipt-viewer
-   npm install qrcode html-to-image
+- PWA (service worker + manifest)
+- `qrcode` + `html-to-image`
